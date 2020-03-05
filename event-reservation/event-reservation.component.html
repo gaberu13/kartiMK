@@ -1,0 +1,84 @@
+<div *ngIf="!!error" class="hide-me fixed-top" [hidden]="showAlert">
+  <ngb-alert *ngFor="let errore of error.error.Errors" (close)="close()">
+    <strong>Warning!</strong> {{errore.Messages}}
+  </ngb-alert>
+
+</div>
+
+
+<div *ngIf="!!actualZone"><strong><i class="fa fa-money"></i>
+  </strong>{{actualZone.PriceSecond}} EUR - {{actualZone.NameSecond}} <span *ngIf="!!actualRowForZone"> -
+    {{actualRowForZone.Row}}</span>
+  <hr>
+</div>
+
+<mat-form-field class="form-size">
+  <mat-label>Избери зона на седење</mat-label>
+  <mat-select [(ngModel)]="actualZone" (ngModelChange)="getRowsForZone()">
+    <mat-option *ngFor="let actualZone of mapZones" [value]="actualZone">
+      {{actualZone.NameSecond}}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
+<hr>
+
+<div *ngIf="actualZone">
+
+  <div *ngIf="actualZone.IsNumerated; then numerated else notNumerated"></div>
+  <ng-template #numerated>
+
+
+    <h6>Избери ред на седење</h6>
+
+    <mat-radio-group class="radio-group" [(ngModel)]="actualRowForZone" (ngModelChange)="getSeatsForRowByEvent()"
+      aria-label="Select an option">
+
+
+      <mat-radio-button *ngFor="let actualRowForZone of rowForZone" [value]="actualRowForZone"> {{actualRowForZone.Row}}
+      </mat-radio-button>
+
+    </mat-radio-group>
+
+    <hr *ngIf="!!seatsForRow">
+    <h6 *ngIf="!!seatsForRow">Избери место на седење:</h6>
+    <div class="max-size">
+      <span *ngFor="let item of seatsForRow">
+        <div class="number-position">
+          <span class="text-position"
+            (click)="seatToggle(item) || item.display = !item.display">{{item.Seat.Seat}}</span>
+
+
+          <img class="image-position" [src]="availabilityIcon(item)" alt="Loading img">
+
+        </div>
+
+      </span>
+    </div>
+
+  </ng-template>
+  <ng-template #notNumerated>
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <h4>Број на карти:</h4>
+
+
+        <div class="grid-list">
+          <mat-grid-list cols="3" rowHeight="3:1">
+            <mat-grid-tile>
+              <button (click)="decrement()" matTooltip="Намали број" mat-button color="primary"
+                class="btnBlock">-</button>
+            </mat-grid-tile>
+            <mat-grid-tile>{{numberOfTickets}}</mat-grid-tile>
+            <mat-grid-tile>
+              <button (click)="increment()" matTooltip="Зголеми број" mat-button color="primary"
+                class="btnBlock">+</button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        <button class="btn-add" mat-raised-button color="primary" (click)="addNotNumeratedSeat()">Потврди</button>
+      </div></div>
+  </ng-template>
+</div>
+
+<shopping-cart [seat]="seat" [showbtns]="showbtns"></shopping-cart>

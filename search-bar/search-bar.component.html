@@ -1,0 +1,21 @@
+<div class="search-form">
+  <form>
+    <mat-form-field class="example-full-width">
+      <!-- <span matPrefix>
+        <i class="fa fa-search"></i>
+      </span> -->
+      <input matInput name="search" [(ngModel)]="searchText" (click)="getEventsAll()" (ngModelChange)="emiitSearch()" [matAutocomplete]="auto"
+        placeholder="Пребарувај настани, концерти, артисти" value="">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option></mat-option>
+        <mat-option *ngFor="let item of items |  filter:searchText" [value]="item.NameFirst">
+          <a [routerLink]="[ '/details',item.Id]"> <img aria-hidden [src]="'http://rave.st2/'+item.Image" height="25">
+            {{item.NameFirst}}</a>
+        </mat-option>
+      </mat-autocomplete>
+
+
+
+    </mat-form-field>
+  </form>
+</div>

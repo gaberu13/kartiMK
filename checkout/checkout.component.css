@@ -1,0 +1,99 @@
+.content {
+  margin: 5% 7%;
+  margin-top: -9%;
+}
+
+.inputs {
+  /* padding-right: 10% */
+  display: block
+}
+
+.image-size {
+  width: 100%
+}
+
+.bg {
+  background-image: url("https://www.karti.com.mk/images/koncert-header.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 10%
+}
+
+.bg-color {
+  background: linear-gradient(180deg, #fffffff5 59%, transparent);
+  /* padding: 1%; */
+  border-right: 1px solid #c2abad;
+  border-top: 1px solid #c2abad;
+  -webkit-backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
+}
+
+.text-color {
+  color: #e22b32;
+  
+  text-shadow: 1px 2px #f6f6f6;
+  font-size: 34px;
+}
+
+.text-color2 {
+  color: #c0272d;
+  text-shadow: 2px 2px #d4d6d8;
+
+  font-size: 28px;
+}
+
+.submit {
+  float: right;
+  padding: 0% 5%;
+}
+
+.shadow {
+  box-shadow: 10px -61px 30px 6px rgba(0, 0, 0, .2) !important;
+}
+.padding-empty{
+  padding-top: 11%;
+}
+.background-style{
+  background-color: #d6d8da;
+    display: inline-grid;
+    padding: 3%;
+    margin: 17% 5%;
+    border-radius: 9%;
+    box-shadow: 8px 8px 0px 0px #333333ab;
+}
+.shoping{
+  position: absolute;
+  padding: 33%
+}
+.shoppingCart{
+  display: absolute;
+}
+@media only screen and (max-width:768px) {
+  /* For mobile phones: */
+  .text-color {
+    font-size: 9vw;
+    padding-top: 12%;
+  }
+  .text-color2{
+    font-size: 6vw;
+  }
+}
+
+.content-desktop {display: block;}
+.content-mobile {display: none;}
+
+@media screen and (max-width: 1200px) {
+
+.content-desktop {display: none;}
+.content-mobile {
+  display: block;
+  color: white;}
+
+}
+.example-margin {
+  word-wrap: break-word;
+}
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+}

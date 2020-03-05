@@ -1,0 +1,125 @@
+.example-card {
+  display: block;
+  width: 30%;
+}
+<<<<<<< HEAD
+@media only screen and (max-width:991px) {
+  /* For mobile phones: */
+  .nameFirst {
+    font-size: 5vw !important;
+    padding-top: 20% !important;
+=======
+.bg {
+    width: 100%;
+    height: 100%;
+background-image: url("https://www.karti.com.mk/images/koncert-header.jpg");
+/* background-image: url("https://www.outlookindia.com/outlooktraveller/resizer.php?src=https%3A%2F%2Fwww.outlookindia.com%2Foutlooktraveller%2Fpublic%2Fuploads%2Farticles%2Fexplore%2FMusic-festival.jpg&w=2000&h=275]&fbclid=IwAR2K801Ky5ynFKWhKOGvjG8Du2Aj_WobDcZ6pLJlLMJLSZdV-u9AF47vug0"); */
+background-size: cover;
+background-repeat: no-repeat;
+    animation: myfirst 5s ; 
+  }
+  /* Standard syntax */
+  @keyframes myfirst {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .nameFirst{
+    text-align: center;
+    font-size: 80px;
+    color: #c0272d;
+    text-shadow: 4px 0px #fff;
+    padding: 6% 0%;
+>>>>>>> c91174b7b82521997277602e7d0fe8615909e852
+  }
+}
+@media only screen and (max-width:768px) {
+  /* For mobile phones: */
+  .nameFirst {
+    font-size: 10vw !important;
+    padding-top: 40% !important;
+  }
+}
+
+.bg {
+ 
+  
+  background-attachment: fixed;
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.nameFirst {
+  text-align: center;
+  font-size: 3vw;
+  color: #c0272d;
+  text-shadow: 4px 0px #f9f9f9ad;
+  padding: 6% 0%;
+ 
+}
+
+
+.body-details {
+  padding-left: 7%
+}
+
+.ez {
+  display: block;
+}
+
+.image-size {
+  width: 100%
+}
+
+.row-class {
+  margin: 0% 7%
+}
+
+.title-format {
+  font-weight: bold;
+  color: #c0272d;
+  text-shadow: -2px -2px #0000001a;
+  padding: 5% 0%;
+}
+
+.buy-button {
+  float: right;
+  background-color: #c0272d;
+  color: white
+}
+
+.title-place {
+  text-align: center;
+  margin: auto;
+}
+
+.triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-top: 320px solid #8a8f9552;
+  border-right: 320px solid transparent;
+  margin: -500px auto;
+  float: left;
+  margin: 0% auto;
+  position: absolute;
+}
+
+.fa {
+  margin-right: 4%;
+}
+
+th {
+  padding-right: 10%;
+}
+
+.test-ez {
+  display: inline;
+}

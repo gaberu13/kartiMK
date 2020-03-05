@@ -1,0 +1,35 @@
+<div *ngIf="!!groupedSeat">
+  <div *ngIf="groupedSeat.Items == 0; else haveItems ">
+    <p>Вашата кошничка е празна!</p>
+  </div>
+  <ng-template #haveItems>
+
+    <mat-card-content *ngIf="!!groupedSeat">
+      <div class="cart-inside">
+        <div *ngFor="let items of groupedSeat.Items">
+
+          <h6>{{items.Event.NameFirst}}</h6>
+
+
+
+          <table>
+            <tbody *ngFor="let item of items.Items">
+              <tr>
+                <td><small>{{item.EventSeat.Seat.Zone.NameSecond}}</small></td>
+                <td><small>{{item.EventSeat.Seat.Row}}</small></td>
+                <td><small>{{item.EventSeat.Seat.Seat}}</small></td>
+                <td><small>{{item.Price}}</small><small> EUR</small></td>
+              </tr>
+
+
+          </table>
+          <hr>
+        </div>
+
+      </div>
+      <button mat-raised-button [routerLink]="[ '/checkout']">Купи</button>
+      <p class="floatRight">Вкупно: <strong>{{groupedSeat.Total }}</strong><small> EUR</small></p>
+
+    </mat-card-content>
+  </ng-template>
+</div>

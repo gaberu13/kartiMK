@@ -1,0 +1,66 @@
+.example-card {
+  margin-bottom: 5%;
+  overflow: hidden;
+  background: #ffffffad; 
+  box-shadow: 20px 23px 9px -1px rgba(0, 0, 0, .2);
+
+}
+
+
+.mat-card-header {
+  margin: 0px -16px;
+}
+
+.cart-custom {
+  margin: 1% 7%;
+  transform: scale(1);
+  transition-duration: 0.2s;
+
+}
+.cart-custom :hover{
+  transform: scale(1.01);
+  transition-duration: 0.2s;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.event-title {
+  background-color: #8a8f9552;
+  padding: 6% 16%;
+  margin: -4% auto;
+  color: #c0272d;
+  text-shadow: 2px 2px white;
+}
+
+.triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-top: 320px solid #8a8f9552;
+  border-right: 320px solid transparent;
+  margin: -500px auto;
+  float: left;
+  margin: 4% auto;
+  position: absolute;
+}
+.flaotPrice{
+  float: right
+}
+

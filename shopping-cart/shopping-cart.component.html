@@ -1,0 +1,187 @@
+<div class="content-desktop"  *ngIf="!!groupedSeat " [hidden]="changeText"  >
+
+  <div  class="fixed-top animationCart"  [hidden]="show"  >
+    <mat-card class="example-card" [hidden]="groupedSeat.Items == 0"  >
+     
+        <div [hidden]="!showbtns">
+            <button class="min-icon" mat-button (click)="show = !show"><i class="fa fa-window-minimize"
+                aria-hidden="true"></i></button>
+          </div>
+        <h3 >Кошничка</h3>
+        <div class="cart-inside" >
+      <div *ngFor="let items of groupedSeat.Items">
+      
+      
+        
+      <h5>{{items.Event.NameSecond }}</h5>
+      <mat-card-subtitle>{{items.Event.Date}}</mat-card-subtitle>
+     <!--  <mat-card-subtitle>{{items.Event.Object.NameSecond}}</mat-card-subtitle> -->
+
+
+      <mat-card-content>
+        <hr>
+        <table>
+          <thead>
+            <tr>
+              <th>Секција</th>
+              
+              <th>Ред</th>
+              
+              <th>Седиште</th>
+              
+              <th>Цена</th>
+              <th></th>
+
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let item of items.Items">
+            <tr>
+              <td>{{item.EventSeat.Seat.Zone.NameSecond }}</td>
+              
+              <td>{{item.EventSeat.Seat.Row}}</td>
+              
+              <td>{{item.EventSeat.Seat.Seat}}</td>
+              
+              <td>{{item.Price}}<small> EUR</small></td>
+              <td  [hidden]="!showbtns"><button  class="removeBtn" class="right" mat-button color="warn" (click)="removeCart(item.Id)">X</button></td>
+
+            </tr>
+
+
+        </table>
+        <hr>
+        
+        
+        
+      </mat-card-content>
+      
+
+     
+      
+
+    </div>
+  </div>
+    <div [hidden]="!!showbtns">
+          
+        <mat-card-subtitle *ngFor="let details of seats.ShippingDetails"><i class="fa fa-truck" aria-hidden="true"></i>
+          {{details.ShippingMethod.DescriptionSecond}} - {{details.ShippingMethod.PriceFirst }}<small> EUR</small></mat-card-subtitle>
+      </div>
+    <p class="floatRight">Вкупна цена: <strong>{{groupedSeat.Total}}</strong><small> EUR</small></p>
+    <mat-card-actions [hidden]="!showbtns">
+        <div>
+        <button  mat-raised-button color="primary" [routerLink]="[ '/checkout']">Купи</button>
+
+        <!-- <button mat-button (click)="delete()">Изпразни кошничка</button> -->
+      </div>
+
+      </mat-card-actions>
+
+
+    </mat-card>
+  </div>
+  <div [hidden]="!showbtns" >
+    <div class="fixed-top" [hidden]="!show"   >
+
+      <button  class="cart-icon" mat-fab color="primary" (click)="show = !show"><i class="fa fa-shopping-cart"
+          aria-hidden="true"></i></button>
+
+    </div>
+  </div>
+ 
+</div>
+
+
+
+<div class="content-mobile" *ngIf="!!groupedSeat">
+    <div class="fixed-bottom ez" >
+        <div  class="fixed-top animationCart"  [hidden]="!show"  >
+            <mat-card class="example-card" [hidden]="groupedSeat.Items == 0"  >
+             
+                <div [hidden]="!!showbtns2">
+                    <button class="min-icon" mat-button (click)="show = !show"><i class="fa fa-window-minimize"
+                        aria-hidden="true"></i></button>
+                  </div>
+                <h3 >Кошничка</h3>
+                <div class="cart-inside" >
+              <div *ngFor="let items of groupedSeat.Items">
+              
+              
+                
+              <h5>{{items.Event.NameSecond }}</h5>
+              <mat-card-subtitle>{{items.Event.Date}}</mat-card-subtitle>
+             <!--  <mat-card-subtitle>{{items.Event.Object.NameSecond}}</mat-card-subtitle> -->
+        
+        
+              <mat-card-content>
+                <hr>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Секција</th>
+                      
+                      <th>Ред</th>
+                      
+                      <th>Седиште</th>
+                      
+                      <th>Цена</th>
+                      <th></th>
+        
+                    </tr>
+                  </thead>
+        
+                  <tbody *ngFor="let item of items.Items">
+                    <tr>
+                      <td>{{item.EventSeat.Seat.Zone.NameSecond }}</td>
+                      
+                      <td>{{item.EventSeat.Seat.Row}}</td>
+                      
+                      <td>{{item.EventSeat.Seat.Seat}}</td>
+                      
+                      <td>{{item.Price}}<small> EUR</small></td>
+                      <td  [hidden]="!showbtns2"><button  class="removeBtn" class="right" mat-button color="warn" (click)="removeCart(item.Id)">X</button></td>
+        
+                    </tr>
+        
+        
+                </table>
+                <hr>
+                
+                
+                
+              </mat-card-content>
+              
+        
+             
+              
+        
+            </div>
+          </div>
+            <div [hidden]="!!showbtns2">
+                  
+                <mat-card-subtitle *ngFor="let details of seats.ShippingDetails"><i class="fa fa-truck" aria-hidden="true"></i>
+                  {{details.ShippingMethod.DescriptionSecond}} - {{details.ShippingMethod.PriceFirst }}<small> EUR</small></mat-card-subtitle>
+              </div>
+            <p class="floatRight">Вкупна цена: <strong>{{groupedSeat.Total}}</strong><small> EUR</small></p>
+            <mat-card-actions [hidden]="!showbtns2">
+                <div>
+                <!-- <button  mat-raised-button color="primary" [routerLink]="[ '/checkout']">Купи</button> -->
+        
+                <!-- <button mat-button (click)="delete()">Изпразни кошничка</button> -->
+              </div>
+        
+              </mat-card-actions>
+        
+        
+            </mat-card>
+          </div>
+
+
+   <p class="text-size-mobile">Вкупно: <strong>{{groupedSeat.Total}}</strong><small>EUR</small></p>
+  <button class="mobile-btn"  mat-button color="primary" (click)="show = !show"><i class="fa fa-shopping-cart"
+    aria-hidden="true"></i>Кошничка</button>
+    <br>
+    <button  [hidden]="!showbtns"class="mobile-btn fill-btn" mat-raised-button color="primary" [routerLink]="[ '/checkout']">Купи</button>
+   
+
+</div>

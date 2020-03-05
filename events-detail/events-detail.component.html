@@ -1,0 +1,62 @@
+
+<div class="col-sl-12" *ngIf="!!events">
+  <div class="bg" [ngStyle]="{'background-image': 'url(' + bgImageVariable + ')'}">
+    <div class="flex-container">
+      <div class="nameFirst"><strong>{{events.NameSecond }}</strong>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="triangle-bottomright"></div>
+</div>
+
+  
+
+  <div class="row row-class" *ngIf="!!events">
+
+    <div class="col-sm-6">
+      <h3 class="title-format">Галерија</h3>
+      <img class="image-size" [src]="'http://rave.st2/images/objects/'+events.ObjectMap.Thumbnail" alt="Loading Image">
+    </div>
+    <div class="col-sm-6">
+      <h3 class="title-format">Детални информации</h3>
+      <hr>
+      <div><strong><i class="fa fa-calendar-o"></i>
+        </strong> {{events.Date}}</div>
+      <hr>
+      <div><strong><i class="fa fa-map-marker"></i>
+        </strong>{{events.ObjectMap.Object.NameSecond}} </div>
+      <hr>
+
+      <event-reservation [Id]="Id"></event-reservation>
+
+    </div>
+
+
+  </div>
+
+  <div class="row row-class" *ngIf="!!events">
+
+    <div class="col-sm-12 title-place">
+
+      <h3 class="title-format">Детали за место на одржување</h3>
+    </div>
+
+  </div>
+  <div class="row row-class" *ngIf="!!events">
+    <div class="col-sm-6">
+
+      <hr>
+      <div><strong><i class="fa fa-font"></i> </strong>{{events.ObjectMap.Object.NameSecond}} </div>
+
+      <hr>
+
+      <div><strong><i class="fa fa-location-arrow"></i>
+        </strong>{{events.ObjectMap.Object.AddressSecond}}</div>
+      <hr>
+    </div>
+    <div class="col-sm-6" [innerHTML]="events.ObjectMap.Object.DescriptionSecond">
+    </div>
+  </div>
+

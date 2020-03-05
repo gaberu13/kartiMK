@@ -1,0 +1,18 @@
+<div class="custom-carousel" *ngIf="events">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let event of events;">
+
+      <div class="picsum-img-wrapper">
+        <img [src]="'http://rave.st2/'+event.Image" alt="Random first slide">
+      </div>
+      <a [routerLink]="[ '/details',event.Id]">
+        <div class="carousel-caption">
+          <h3>{{event.NameFirst}}</h3>
+          <p>{{event.Date}}</p>
+          <p>{{event.ObjectMap.Object.NameSecond}}</p>
+
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+</div>

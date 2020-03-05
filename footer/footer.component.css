@@ -1,0 +1,19 @@
+.triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-bottom: 500px solid #8a8f9552;
+  border-left: 500px solid transparent;
+  margin: -500px auto;
+  float: right;
+}
+
+.footer {
+  background-color: #8a8f9552;
+  padding: 2% 0%;
+}
+
+.main-footer {
+  margin: 0% 22%;
+  text-align: center;
+}
+

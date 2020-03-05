@@ -1,0 +1,39 @@
+<!-- Carousel -->
+
+<div class="row" *ngIf="events">
+  <div class="col-sm-12">
+    <event-carousel [events]="events" [images]="images"></event-carousel>
+  </div>
+</div>
+<!--  -->
+<div class="row event-title">
+  <h1><strong>Настани</strong></h1>
+</div>
+<div class="triangle-bottomright"></div>
+<!--  -->
+
+<div class="row  align-items-center cart-custom">
+  <div class="col-lg-3 col-sm-12 col-md-6 col-12 " *ngFor="let event of events | filter:searchText">
+    <mat-card class="example-card" >
+      
+        <a [routerLink]="[ '/details',event.Id]">
+          
+            <img mat-card-image [src]="'http://rave.st2/'+event.Image" alt="fail to load image">
+          
+          <mat-card-header>
+            
+                <mat-card-title>{{event.NameFirst }}</mat-card-title>
+              
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card-subtitle>{{event.Date}}</mat-card-subtitle>
+            <p class="flaotPrice">${{event.PriceCurrencySecond}}<small> EUR</small></p>
+          </mat-card-content>
+
+        </a>
+  
+    </mat-card>
+    <!-- </div> -->
+  </div>
+
+</div>

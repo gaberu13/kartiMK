@@ -1,0 +1,18 @@
+.custom-carousel {
+  width: 84%;
+  margin: auto;
+  margin-top: 6%;
+  box-shadow: 20px 23px 9px -1px rgba(0, 0, 0, .2);
+
+}
+@media only screen and (max-width:991px) {
+  .custom-carousel{
+    margin-top: 13%;
+  }
+}
+@media only screen and (max-width:520px) {
+  .custom-carousel{
+    margin-top: 21%;
+  }
+}
+
